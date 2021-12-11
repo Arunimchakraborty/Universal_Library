@@ -1,3 +1,5 @@
+
+//imports
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -5,7 +7,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,12 +33,12 @@ public class Backend {
     void IntroScreen() {
 
         panel.removeAll();
-        panel.setLayout(new GridLayout(3, 1));
+        panel.setLayout(new GridLayout(3, 3));
         Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        Label = new JLabel("Welcome");
-        Label.setBounds(200, 100, 80, 50);
-        panel.add(Label);
+        // Label = new JLabel("Welcome");
+        // Label.setBounds(200, 100, 80, 50);
+        // panel.add(Label);
         login = new JButton("Login");
         panel.add(login);
         register = new JButton("Register");
@@ -45,8 +46,10 @@ public class Backend {
         registerClick();
         panel.add(register);
         Frame.add(panel);
+        panel.setSize(400, 500);
         Frame.setSize(400, 500);
-        // Frame.pack();
+
+        panel.setVisible(true);
         Frame.setVisible(true);
 
     }
@@ -54,7 +57,7 @@ public class Backend {
     void loginScreen() {
 
         panel.removeAll();
-        panel.setLayout(new GridLayout(8, 0));
+        panel.setLayout(new GridLayout(8, 1));
         Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Frame.add(panel, BorderLayout.CENTER);
 
@@ -87,7 +90,6 @@ public class Backend {
                         status.setText("Login Unsuccessfull");
                     }
                 } catch (Exception e1) {
-                    // TODO Auto-generated catch block
                     e1.printStackTrace();
                 }
             }
@@ -118,7 +120,6 @@ public class Backend {
 
         register = new JButton("Register");
         register.addActionListener(new ActionListener() {
-            @Override
             public void actionPerformed(ActionEvent e) {
                 Connection con;
                 try {
